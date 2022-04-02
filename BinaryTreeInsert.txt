@@ -1,0 +1,66 @@
+#Binary Tree
+Way  01 ---iterative way to insert 
+class Node:
+	def __init__(self,data):
+		self.data=data
+		self.left=None
+		self.right=None
+class BinaryTree:
+	def __init__(self):
+		self.root=None
+	def insert(self,data):
+		newval=Node(data)
+		if self.root==None:
+			self.root=newval
+		else:
+			curr=self.root
+			while True:
+				if curr.data>data:
+					if curr.left:
+						curr=curr.left
+					else:
+						curr.left=newval
+						break
+				elif curr.data<data:
+					if curr.right:
+						curr=curr.right
+					else:
+						curr.right=newval
+						break
+				else:
+					break
+
+---------------------------------------------------
+ 
+
+
+Way 02 ---Recursive way to insert
+
+
+class BinaryTree:
+	def __init__(self,data=None):
+		self.data=data
+		self.root=data
+		self.left=None
+		self.right=None
+	
+	def insertbst(self,data):
+		if not self.root:
+			self.root=data
+			return 
+		if self.root>data:
+			if self.left:
+				self.left.insertbst(data)
+			else:
+				self.left=BinaryTree(data)
+		elif self.root==data:
+			return
+		else:
+		self.root<data:
+			if.self.right:
+				self.right.insertbst(data)
+			else:
+				self.right=BinaryTree(data)
+
+---------------------------------------------
+
